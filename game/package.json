@@ -1,5 +1,5 @@
 {
-  "name": "zeldaish-multiplayer-series",
+  "name": "game",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,9 @@
     "lint": "biome lint .",
     "format": "biome format . --write"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
   "dependencies": {
     "excalibur": "^0.30.3",
     "peerjs": "^1.5.4",
