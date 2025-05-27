@@ -1,0 +1,18 @@
+{
+  "name": "zeldaish-pixellab-cli",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.ts",
+  "bin": {
+    "zeldaish-pixellab": "./index.ts"
+  },
+  "scripts": {
+    "lint": "biome lint .",
+    "format": "biome format . --write",
+    "run": "tsx index.ts"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "shared": "workspace:*"
+  }
+}
