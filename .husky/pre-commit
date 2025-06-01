@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Get staged files
+
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$STAGED_FILES" ]; then
+echo "No staged files to check"
+exit 0
+fi
+
+echo "🔍 Running pre-commit checks on staged files..."
+
+# Check if there are TypeScript/JavaScript files staged
+
+TS_JS_FILES=$(echo "$STAGED_FILES" | grep -E '\.(ts|js|tsx|jsx)$' || true)
+
+if [ -n "$TS_JS_FILES" ]; then
+echo "📝 Running linting and formatting..."
+
+# Run formatting on staged files
+
+pnpm format
+
+# Run linting on all packages (since lint-staged isn't configured)
+
+pnpm lint
+
+# Run type checking
+
+echo "🔍 Running type checking..."
+pnpm typecheck
+
+# Re-add formatted files to staging
+
+echo "$TS_JS_FILES" | xargs git add
+fi
+
+echo "✅ Pre-commit checks completed!"
