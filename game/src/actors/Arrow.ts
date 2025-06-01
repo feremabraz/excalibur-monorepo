@@ -29,16 +29,22 @@ const arrowRightAnim = ex.Animation.fromSpriteSheet(arrowSpriteSheet, [3], 100);
 export class Arrow extends ex.Actor {
 	owner: ex.Actor | null;
 	msRemaining: number;
+	direction: Direction;
+	isUsed: boolean;
+
 	constructor(x: number, y: number, direction: Direction) {
 		super({
 			pos: new ex.Vector(x, y),
 			width: 16,
 			height: 16,
 			scale: SCALE_2x,
+			collisionType: ex.CollisionType.Active,
 		});
 
 		this.addTag(TAG_PLAYER_WEAPON);
 		this.owner = null; // Assigned on creation by body who creates this.
+		this.direction = direction;
+		this.isUsed = false;
 
 		// Expire after so much time
 		this.msRemaining = 2000;
@@ -68,6 +74,7 @@ export class Arrow extends ex.Actor {
 
 	// Remove me if I hit something
 	onDamagedSomething() {
+		this.isUsed = true;
 		this.kill();
 	}
 

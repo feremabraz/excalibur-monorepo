@@ -1,7 +1,6 @@
 import * as ex from "excalibur";
 import type { PostDrawEvent } from "excalibur";
 
-// This is from Matt. Thanks, Matt!
 export class DrawShapeHelper {
 	constructor(actor: ex.Actor) {
 		if (!actor.scene) return;

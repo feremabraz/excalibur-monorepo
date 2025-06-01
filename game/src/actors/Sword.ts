@@ -10,6 +10,7 @@ import {
 } from "@constants";
 import { Images } from "@resources";
 import { DrawShapeHelper } from "../classes/DrawShapeHelper.js";
+import type { Direction } from "@constants";
 
 const swordSpriteSheet = ex.SpriteSheet.fromImageSource({
 	image: Images.swordSheetImage,
@@ -26,19 +27,19 @@ export const SWORD_SWING_2 = "SWORD_SWING_2";
 export const SWORD_SWING_3 = "SWORD_SWING_3";
 
 export class Sword extends ex.Actor {
-	direction: string;
+	direction: Direction;
 	isUsed: boolean;
 	owner: unknown;
 	frames: Record<string, Record<string, ex.Animation>>;
 
-	constructor(x: number, y: number, direction: string) {
+	constructor(x: number, y: number, direction: Direction) {
 		super({
 			pos: new ex.Vector(x, y),
 			width: 32,
 			height: 32,
 			scale: SCALE_2x,
 			color: ex.Color.DarkGray,
-			collisionType: ex.CollisionType.Passive,
+			collisionType: ex.CollisionType.Active,
 		});
 		this.direction = direction;
 		this.isUsed = false;
@@ -138,14 +139,14 @@ export class Sword extends ex.Actor {
 	}
 
 	onInitialize(_engine: ex.Engine): void {
-		//new DrawShapeHelper(this); // TODO - come back to this
+		new DrawShapeHelper(this);
 	}
 
 	onDamagedSomething(): void {
 		this.isUsed = true;
 	}
 
-	useFrame(key: string, direction: string): void {
+	useFrame(key: string, direction: Direction): void {
 		this.graphics.use(this.frames[direction][key]);
 	}
 }

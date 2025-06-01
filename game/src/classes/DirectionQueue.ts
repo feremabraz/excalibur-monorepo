@@ -1,18 +1,18 @@
 import { Keys } from "excalibur";
-import { LEFT, RIGHT, UP, DOWN } from "@constants";
+import { LEFT, RIGHT, UP, DOWN, type Direction } from "@constants";
 
 export class DirectionQueue {
-	heldDirections: string[];
+	heldDirections: Direction[];
 
 	constructor() {
 		this.heldDirections = [];
 	}
 
-	get direction() {
+	get direction(): Direction | null {
 		return this.heldDirections[0] ?? null;
 	}
 
-	add(dir: string) {
+	add(dir: Direction) {
 		const exists = this.heldDirections.includes(dir);
 		if (exists) {
 			return;
@@ -20,7 +20,7 @@ export class DirectionQueue {
 		this.heldDirections.unshift(dir);
 	}
 
-	remove(dir: string) {
+	remove(dir: Direction) {
 		this.heldDirections = this.heldDirections.filter((d) => d !== dir);
 	}
 

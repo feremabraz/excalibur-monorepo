@@ -6,35 +6,42 @@ import { Monster } from "@actors/Monster/Monster";
 import { TAG_ANY_PLAYER } from "@constants";
 
 export class MainGameScene extends ex.Scene {
-  player!: Player;
+	player!: Player;
 
-  override onInitialize(engine: ex.Engine): void {
-    const map = new Map_Indoor();
-    this.add(map);
+	override onInitialize(engine: ex.Engine): void {
+		const map = new Map_Indoor();
+		this.add(map);
 
-    this.player = new Player(200, 200, "RED");
-    this.add(this.player);
+		this.player = new Player(200, 200, "RED");
+		this.add(this.player);
 
-    // Camera follows player
-    const cameraStrategy = new Player_CameraStrategy(this.player, map);
-    engine.currentScene.camera.addStrategy(cameraStrategy);
+		// Camera follows player
+		const cameraStrategy = new Player_CameraStrategy(this.player, map);
+		engine.currentScene.camera.addStrategy(cameraStrategy);
 
-    // Set up ability to query for certain actors on the fly
-    engine.currentScene.world.queryManager.createQuery([
-      TAG_ANY_PLAYER as unknown as ex.ComponentCtor<ex.Component>,
-    ]);
+		// Set up ability to query for certain actors on the fly
+		engine.currentScene.world.queryManager.createQuery([
+			TAG_ANY_PLAYER as unknown as ex.ComponentCtor<ex.Component>,
+		]);
 
-    // Create Monster button
-    const createAddMonsterButton = () => {
-      const button = document.createElement("button");
-      button.onclick = () => {
-        const monster = new Monster(100, 100);
-        engine.add(monster);
-      };
-      button.style.display = "block";
-      button.innerText = "ADD MONSTER";
-      document.body.append(button);
-    };
-    createAddMonsterButton();
-  }
+		// Create Monster button
+		const createAddMonsterButton = () => {
+			const button = document.createElement("button");
+			button.onclick = () => {
+				const monster = new Monster(100, 100);
+				engine.add(monster);
+			};
+			button.onkeydown = (e) => {
+				// Prevent spacebar from triggering the button
+				if (e.key === " ") {
+					e.preventDefault();
+				}
+			};
+			button.style.display = "block";
+			button.innerText = "ADD MONSTER";
+			button.tabIndex = -1; // Prevent button from being focused with tab
+			document.body.append(button);
+		};
+		createAddMonsterButton();
+	}
 }
