@@ -15,7 +15,7 @@ if [ $(echo "$commit_message" | wc -c) -lt 10 ]; then
   exit 1
 fi
 
-# Check for conventional commit format (optional but recommended)
+# Check for conventional commit format
 if echo "$commit_message" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|ci|build|perf)(\(.+\))?: .+"; then
   echo "✅ Conventional commit format detected"
 elif echo "$commit_message" | grep -qE "^(Merge|Revert|Initial commit)"; then

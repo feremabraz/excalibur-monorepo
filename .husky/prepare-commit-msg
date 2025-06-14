@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# This hook is called by git before the commit message editor is started
-# You can use this to add templates or context to commit messages
+# This hook is called before the commit message editor is started
+# We can use this to add templates or context to commit messages
 
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
