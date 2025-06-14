@@ -17,7 +17,7 @@ if [ -n "$TS_JS_FILES" ]; then
   echo "📝 Running Biome checks..."
   
   # Run Biome check (format + lint) on staged files
-  echo "$TS_JS_FILES" | xargs pnpm lint:fix
+  echo "$TS_JS_FILES" | xargs pnpm lint
   
   # Run type checking
   echo "🔍 Running type checking..."
