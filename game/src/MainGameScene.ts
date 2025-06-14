@@ -4,6 +4,7 @@ import { Player } from "@actors/Players/Player";
 import { Player_CameraStrategy } from "@classes/Player_CameraStrategy";
 import { Monster } from "@actors/Monster/Monster";
 import { TAG_ANY_PLAYER } from "@constants";
+import { UIElementStyles } from "./styles";
 
 export class MainGameScene extends ex.Scene {
 	player!: Player;
@@ -37,9 +38,9 @@ export class MainGameScene extends ex.Scene {
 					e.preventDefault();
 				}
 			};
-			button.style.display = "block";
+			// Apply styles from UIElementStyles
+			Object.assign(button.style, UIElementStyles.Button);
 			button.innerText = "ADD MONSTER";
-			button.tabIndex = -1; // Prevent button from being focused with tab
 			document.body.append(button);
 		};
 		createAddMonsterButton();
