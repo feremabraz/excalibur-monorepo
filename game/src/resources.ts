@@ -21,16 +21,9 @@ const Images = {
 
 const Sounds = {};
 
-const loader = new ex.Loader();
-loader.suppressPlayButton = true;
-
 const allResources: Record<string, ex.Loadable<unknown>> = {
 	...Images,
 	...Sounds,
 };
 
-for (const res in allResources) {
-	loader.addResource(allResources[res]);
-}
-
-export { loader, Images, Sounds };
+export { Images, Sounds, allResources };

@@ -1,6 +1,6 @@
 import { MainGameScene } from "./src/MainGameScene";
 import { SplashScene } from "./src/SplashScene";
-import { loader } from "./src/resources";
+import { loader } from "./src/loader";
 import * as ex from "excalibur";
 
 const game = new ex.Engine({
