@@ -1,13 +1,13 @@
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	InputOTP as ShadcnInputOTP,
 	InputOTPGroup as ShadcnInputOTPGroup,
 	InputOTPSeparator as ShadcnInputOTPSeparator,
 	InputOTPSlot as ShadcnInputOTPSlot,
-} from "@/components/ui/input-otp";
+} from "@base-components/input-otp";
 
 import "./styles/retro.css";
 

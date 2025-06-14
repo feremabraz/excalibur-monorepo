@@ -1,14 +1,14 @@
 import type * as TabsPrimitive from "@radix-ui/react-tabs";
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	Tabs as ShadcnTabs,
 	TabsContent as ShadcnTabsContent,
 	TabsList as ShadcnTabsList,
 	TabsTrigger as ShadcnTabsTrigger,
-} from "@/components/ui/tabs";
+} from "@base-components/tabs";
 
 import "./styles/retro.css";
 

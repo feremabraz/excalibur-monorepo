@@ -2,9 +2,9 @@
 
 import { Command as CommandPrimitive } from "cmdk";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
-import { Separator } from "@/components/ui/8bit/separator";
+import { Separator } from "@components/separator";
 import {
 	Command as ShadcnCommand,
 	CommandDialog as ShadcnCommandDialog,
@@ -14,14 +14,14 @@ import {
 	CommandList as ShadcnCommandList,
 	CommandSeparator as ShadcnCommandSeparator,
 	CommandShortcut as ShadcnCommandShortcut,
-} from "@/components/ui/command";
+} from "@base-components/command";
 import {
 	type Dialog,
 	DialogContent,
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-} from "@/components/ui/dialog";
+} from "@base-components/dialog";
 
 import "./styles/retro.css";
 

@@ -4,14 +4,14 @@ import type * as React from "react";
 
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	Tooltip as ShadcnTooltip,
 	TooltipContent as ShadcnTooltipContent,
 	TooltipProvider as ShadcnTooltipProvider,
 	TooltipTrigger as ShadcnTooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@base-components/tooltip";
 
 import "./styles/retro.css";
 

@@ -7,7 +7,7 @@ import {
 	ChartContainer,
 	ChartTooltip,
 	ChartTooltipContent,
-} from "@/components/ui/8bit/chart";
+} from "@components/chart";
 
 export const description = "An area chart with axes";
 

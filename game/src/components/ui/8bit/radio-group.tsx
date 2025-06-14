@@ -5,9 +5,9 @@ import type * as React from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
-import { RadioGroup as ShadcnRadioGroup } from "@/components/ui/radio-group";
+import { RadioGroup as ShadcnRadioGroup } from "@base-components/radio-group";
 
 import "./styles/retro.css";
 

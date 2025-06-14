@@ -1,8 +1,8 @@
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
-import { Badge as ShadcnBadge } from "@/components/ui/badge";
+import { Badge as ShadcnBadge } from "@base-components/badge";
 
 export const badgeVariants = cva("", {
 	variants: {

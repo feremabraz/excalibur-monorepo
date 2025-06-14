@@ -5,7 +5,7 @@ import type * as React from "react";
 import type * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	AlertDialog as ShadcnAlertDialog,
@@ -19,7 +19,7 @@ import {
 	AlertDialogPortal as ShadcnAlertDialogPortal,
 	AlertDialogTitle as ShadcnAlertDialogTitle,
 	AlertDialogTrigger as ShadcnAlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from "@base-components/alert-dialog";
 
 import "./styles/retro.css";
 

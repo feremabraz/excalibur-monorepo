@@ -1,12 +1,12 @@
 import type * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group";
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	ToggleGroup as ShadcnToggleGroup,
 	ToggleGroupItem as ShadcnToggleGroupItem,
-} from "../toggle-group";
+} from "@base-components/toggle-group";
 import "./styles/retro.css";
 
 export const toggleGroupVariants = cva("", {

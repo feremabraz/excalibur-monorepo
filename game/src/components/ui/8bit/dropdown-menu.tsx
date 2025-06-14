@@ -1,7 +1,7 @@
 import type * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	DropdownMenu as ShadcnDropdownMenu,
@@ -16,7 +16,7 @@ import {
 	DropdownMenuSubContent as ShadcnDropdownMenuSubContent,
 	DropdownMenuSubTrigger as ShadcnDropdownMenuSubTrigger,
 	DropdownMenuTrigger as ShadcnDropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@base-components/dropdown-menu";
 
 import "./styles/retro.css";
 

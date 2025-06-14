@@ -1,5 +1,5 @@
 import * as ex from "excalibur";
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 // Game-specific styling that works alongside Tailwind CSS
 export const styles = {

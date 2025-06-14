@@ -5,9 +5,9 @@ import type * as React from "react";
 import type * as TogglePrimitive from "@radix-ui/react-toggle";
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
-import { Toggle as ShadcnToggle } from "@/components/ui/toggle";
+import { Toggle as ShadcnToggle } from "@base-components/toggle";
 
 import "./styles/retro.css";
 

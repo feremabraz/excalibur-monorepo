@@ -7,7 +7,7 @@ import {
 	CollapsibleTrigger as ShadcnCollapsibleTrigger,
 } from "@radix-ui/react-collapsible";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import "./styles/retro.css";
 

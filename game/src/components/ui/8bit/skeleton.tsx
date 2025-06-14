@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
-import { Skeleton as ShadcnSkeleton } from "@/components/ui/skeleton";
+import { Skeleton as ShadcnSkeleton } from "@base-components/skeleton";
 
 import "./styles/retro.css";
 

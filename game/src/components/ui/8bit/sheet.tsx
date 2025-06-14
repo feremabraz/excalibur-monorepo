@@ -1,7 +1,7 @@
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { type VariantProps, cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@lib/utils";
 
 import {
 	Sheet as ShadcnSheet,
@@ -11,7 +11,7 @@ import {
 	SheetHeader as ShadcnSheetHeader,
 	SheetTitle as ShadcnSheetTitle,
 	SheetTrigger as ShadcnSheetTrigger,
-} from "@/components/ui/sheet";
+} from "@base-components/sheet";
 
 import "./styles/retro.css";
 
