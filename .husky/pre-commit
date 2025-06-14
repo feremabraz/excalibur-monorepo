@@ -16,14 +16,26 @@ TS_JS_FILES=$(echo "$STAGED_FILES" | grep -E '\.(ts|js|tsx|jsx|mjs|cjs)$' || tru
 if [ -n "$TS_JS_FILES" ]; then
   echo "📝 Running Biome checks..."
   
-  # Run Biome check (format + lint) on staged files
-  echo "$TS_JS_FILES" | xargs pnpm lint
+  # Runs Biome check (format + lint) directly on staged files from the monorepo root
+  echo "$TS_JS_FILES" | xargs pnpm exec biome check --apply-unsafe
+  BIOME_EXIT_CODE=$?
+
+  if [ $BIOME_EXIT_CODE -ne 0 ]; then
+    echo "❌ Biome checks failed. Please fix the issues before committing."
+    exit $BIOME_EXIT_CODE
+  fi
   
   # Run type checking
   echo "🔍 Running type checking..."
   pnpm typecheck
+  TYPECHECK_EXIT_CODE=$?
+
+  if [ $TYPECHECK_EXIT_CODE -ne 0 ]; then
+    echo "❌ TypeScript type checking failed. Please fix the issues before committing."
+    exit $TYPECHECK_EXIT_CODE
+  fi
   
-  # Re-add formatted files to staging
+  # Re-add formatted files to staging (Biome might have changed them)
   echo "$TS_JS_FILES" | xargs git add
 fi
 
