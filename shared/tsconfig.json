@@ -1,9 +1,9 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "noEmit": true,
     "composite": false,
-    "declaration": false,
-    "outDir": "./dist"
+    "declaration": false
   },
-  "include": ["index.ts"]
+  "include": ["index.ts", "src/**/*.ts"]
 }

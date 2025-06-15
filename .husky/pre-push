@@ -7,6 +7,22 @@ if [ "$SKIP_HOOKS" = "1" ] || [ "$BYPASS_PUSH_PROTECTION" = "1" ]; then
   exit 0
 fi
 
+echo "🔍 Running monorepo lint checks..."
+pnpm lint
+LINT_EXIT_CODE=$?
+if [ $LINT_EXIT_CODE -ne 0 ]; then
+  echo "❌ Lint checks failed. Please fix the issues before pushing."
+  exit $LINT_EXIT_CODE
+fi
+
+echo "🔍 Running monorepo type checks..."
+pnpm typecheck
+TYPECHECK_EXIT_CODE=$?
+if [ $TYPECHECK_EXIT_CODE -ne 0 ]; then
+  echo "❌ TypeScript type checking failed. Please fix the issues before pushing."
+  exit $TYPECHECK_EXIT_CODE
+fi
+
 # Prevent pushing to main/master directly
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 if [ "$current_branch" = "main" ] || [ "$current_branch" = "master" ]; then

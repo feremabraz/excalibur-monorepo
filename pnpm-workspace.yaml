@@ -1,5 +1,4 @@
 packages:
   - "cli"
   - "game"
-  - "docs"
   - "shared"

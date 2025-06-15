@@ -1,6 +1,6 @@
-import * as ex from "excalibur";
-import { allResources } from "./resources";
-import { Colors, GameText } from "./styles";
+import * as ex from 'excalibur';
+import { allResources } from './resources';
+import { Colors, GameText } from './styles';
 
 class CustomLoader extends ex.Loader {
   constructor() {
@@ -14,12 +14,12 @@ class CustomLoader extends ex.Loader {
   public onDraw(ctx: CanvasRenderingContext2D) {
     ctx.fillStyle = Colors.BACKGROUND_DARK.toString();
     ctx.fillRect(0, 0, this.engine.drawWidth, this.engine.drawHeight);
-    
+
     const x = this.engine.halfDrawWidth;
     const gameTitleY = this.engine.halfDrawHeight - 30;
     const loadingMessageY = this.engine.halfDrawHeight + 10;
-    
-    const gameTitle = "Zelda-ish Game";
+
+    const gameTitle = 'Zelda-ish Game';
     const loadingMessage = `Loading... ${Math.round(this.progress * 100)}%`;
 
     // Draw Game Title

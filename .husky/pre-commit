@@ -17,7 +17,7 @@ if [ -n "$TS_JS_FILES" ]; then
   echo "📝 Running Biome checks..."
   
   # Runs Biome check (format + lint) directly on staged files from the monorepo root
-  echo "$TS_JS_FILES" | xargs pnpm exec biome check --apply-unsafe
+  echo "$TS_JS_FILES" | xargs -r pnpm exec biome check --write
   BIOME_EXIT_CODE=$?
 
   if [ $BIOME_EXIT_CODE -ne 0 ]; then
@@ -36,7 +36,10 @@ if [ -n "$TS_JS_FILES" ]; then
   fi
   
   # Re-add formatted files to staging (Biome might have changed them)
-  echo "$TS_JS_FILES" | xargs git add
+  # Only add if TS_JS_FILES is not empty
+  if [ -n "$TS_JS_FILES" ]; then
+    echo "$TS_JS_FILES" | xargs -r git add
+  fi
 fi
 
 echo "✅ Pre-commit checks completed!"
