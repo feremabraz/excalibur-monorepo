@@ -1,17 +1,14 @@
 # Excalibur.js 2D Videogame Monorepo
 
-This repository is a modern, workspace-driven monorepo for building 2D games using Excalibur.js.
+This repository is workspace-driven monorepo for building 2D games using Excalibur.js.
 
-It's fully typed and features a robust asset pipeline.
-
-It includes a dedicated CLI that leverages Pixel Lab's API, making 2D asset creation accessible for developers without Pixel Art skills. You can even run the CLI to replace assets while in dev mode, so iteration it's really fast!
+It includes a dedicated CLI that leverages Pixel Lab's API, making 2D asset creation accessible for developers without Pixel Art skills. You can run the CLI to replace assets while in dev mode.
 
 ## Structure
 
-- **game/** — Game project (TypeScript, Vite, Excalibur).
-- **cli/** — CLI for generating pixel art assets via the Pixel Lab API.
+- **game/** — Game project (Vite, Excalibur).
+- **cli/** — CLI for generating pixel art assets.
 - **shared/** — Shared utilities and types for all packages.
-- **docs/** — Comprehensive technical and asset documentation.
 
 ## Requirements
 
@@ -24,9 +21,9 @@ It includes a dedicated CLI that leverages Pixel Lab's API, making 2D asset crea
    ```fish
    pnpm install
    ```
-2. **Run the game (dev mode):**
+2. **Run the game:**
    ```fish
-   pnpm start:game
+   pnpm start:game # or pnpm dev
    ```
 3. **Use the CLI:**
    ```fish
@@ -54,4 +51,3 @@ See the `docs/` directory for:
 
 - Asset technical specifications
 - Pixel Lab API usage
-- Game architecture and extension guides
