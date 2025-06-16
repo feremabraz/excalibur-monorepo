@@ -1,9 +1,9 @@
+import { debug } from '@/classes/Debug';
 import { Monster } from '@actors/Monster/Monster';
 import { Player } from '@actors/Players/Player';
 import { Player_CameraStrategy } from '@classes/Player_CameraStrategy';
 import { TAG_ANY_PLAYER } from '@constants';
 import { IndoorMap } from '@maps/Indoor';
-import { UIElementStyles } from '@styles/ui';
 import * as ex from 'excalibur';
 
 export class MainScene extends ex.Scene {
@@ -27,5 +27,23 @@ export class MainScene extends ex.Scene {
     engine.currentScene.world.queryManager.createQuery([
       TAG_ANY_PLAYER as unknown as ex.ComponentCtor<ex.Component>,
     ]);
+  }
+
+  override onPreUpdate(engine: ex.Engine): void {
+    if (debug) {
+      engine.showDebug(debug.state.actors);
+    }
+  }
+
+  override onActivate(): void {
+    if (debug) {
+      debug.show();
+    }
+  }
+
+  override onDeactivate(): void {
+    if (debug) {
+      debug.hide();
+    }
   }
 }

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "excalibur": "^0.30.3",
-    "shared": "workspace:*"
+    "shared": "workspace:*",
+    "lil-gui": "^0.20.0"
   }
 }

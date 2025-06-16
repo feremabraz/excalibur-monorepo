@@ -1,3 +1,4 @@
+import { initializeDebug } from '@/classes/Debug';
 import { loader } from '@/loader';
 import { MainScene } from '@scenes/Main';
 import { SplashScene } from '@scenes/Splash';
@@ -14,5 +15,7 @@ const game = new ex.Engine({
 });
 
 game.start(loader).then(() => {
+  game.canvas.tabIndex = -1;
+  initializeDebug(game.canvas);
   game.goToScene('splash');
 });
