@@ -1,54 +1,24 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@scenes/*": [
-        "./src/scenes/*"
-      ],
-      "@actors/*": [
-        "./src/actors/*"
-      ],
-      "@classes/*": [
-        "./src/classes/*"
-      ],
-      "@maps/*": [
-        "./src/maps/*"
-      ],
-      "@constants": [
-        "./src/constants.ts"
-      ],
-      "@resources": [
-        "./src/resources.ts"
-      ],
-      "@animations/*": [
-        "./src/animations/*"
-      ],
-      "@helpers": [
-        "./src/helpers.ts"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ]
+      "@/*": ["./src/*"],
+      "@scenes/*": ["./src/scenes/*"],
+      "@actors/*": ["./src/actors/*"],
+      "@classes/*": ["./src/classes/*"],
+      "@maps/*": ["./src/maps/*"],
+      "@constants": ["./src/constants.ts"],
+      "@resources": ["./src/resources.ts"],
+      "@animations/*": ["./src/animations/*"],
+      "@helpers": ["./src/helpers.ts"],
+      "@styles/*": ["./src/styles/*"]
     },
     "outDir": "dist"
   },
-  "include": [
-    "src",
-    "main.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src", "main.ts"],
+  "exclude": ["node_modules", "dist"]
 }
