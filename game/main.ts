@@ -4,8 +4,7 @@ import { SplashScene } from '@scenes/Splash';
 import * as ex from 'excalibur';
 
 const game = new ex.Engine({
-  width: 208 * 2,
-  height: 192 * 2,
+  displayMode: ex.DisplayMode.FillScreen,
   fixedUpdateFps: 60,
   antialiasing: false,
   scenes: {
