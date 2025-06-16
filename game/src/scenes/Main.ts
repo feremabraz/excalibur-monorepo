@@ -1,16 +1,16 @@
+import * as ex from 'excalibur';
 import { Monster } from '@actors/Monster/Monster';
 import { Player } from '@actors/Players/Player';
 import { Player_CameraStrategy } from '@classes/Player_CameraStrategy';
 import { TAG_ANY_PLAYER } from '@constants';
-import { Map_Indoor } from '@maps/Map_Indoor';
-import * as ex from 'excalibur';
-import { UIElementStyles } from './styles';
+import { IndoorMap } from '@maps/Indoor';
+import { UIElementStyles } from '@styles/ui';
 
-export class MainGameScene extends ex.Scene {
+export class MainScene extends ex.Scene {
   player!: Player;
 
   override onInitialize(engine: ex.Engine): void {
-    const map = new Map_Indoor();
+    const map = new IndoorMap();
     this.add(map);
 
     this.player = new Player(200, 200, 'RED');

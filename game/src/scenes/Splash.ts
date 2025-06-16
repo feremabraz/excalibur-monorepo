@@ -1,5 +1,6 @@
 import * as ex from 'excalibur';
-import { Colors, GameText } from './styles';
+import { Colors } from '@styles/colors';
+import { GameText } from '@styles/text';
 
 export class SplashScene extends ex.Scene {
   override onInitialize(engine: ex.Engine): void {

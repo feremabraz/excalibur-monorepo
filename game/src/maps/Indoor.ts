@@ -5,7 +5,7 @@ import * as ex from 'excalibur';
 
 const mapSprite = Images.indoorImage.toSprite();
 
-export class Map_Indoor extends ex.Actor {
+export class IndoorMap extends ex.Actor {
   tileWidth: number;
   tileHeight: number;
 
@@ -46,13 +46,4 @@ export class Map_Indoor extends ex.Actor {
       engine.add(floor);
     }
   }
-
-  // getPlayerStartingPosition() {
-  //   return randomFromArray([
-  //     [200, 225],
-  //     [450, 225],
-  //     [300, 325],
-  //     [450, 325],
-  //   ]);
-  // }
 }

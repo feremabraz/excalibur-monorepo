@@ -1,6 +1,6 @@
 import { PlayerActions } from '@actors/Players/PlayerActions';
 import { PlayerAnimations } from '@actors/Players/PlayerAnimations';
-import { generateCharacterAnimations } from '@character-animations';
+import { generateCharacterAnimations } from '@animations/character';
 import { DirectionQueue } from '@classes/DirectionQueue';
 import { DrawShapeHelper } from '@classes/DrawShapeHelper';
 import {

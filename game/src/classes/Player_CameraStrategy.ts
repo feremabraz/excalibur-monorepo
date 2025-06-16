@@ -1,7 +1,7 @@
 import type { Player } from '@actors/Players/Player';
-import type { Map_Indoor } from '@maps/Map_Indoor';
+import { SCALE } from '@constants';
+import type { IndoorMap } from '@maps/Indoor.js';
 import * as ex from 'excalibur';
-import { SCALE } from '../constants.js';
 
 export class Player_CameraStrategy {
   target: ex.Actor;

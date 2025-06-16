@@ -1,3 +1,4 @@
+import { DrawShapeHelper } from '@classes/DrawShapeHelper';
 import {
   DOWN,
   LEFT,
@@ -10,7 +11,6 @@ import {
 import type { Direction } from '@constants';
 import { Images } from '@resources';
 import * as ex from 'excalibur';
-import { DrawShapeHelper } from '../classes/DrawShapeHelper.js';
 
 const swordSpriteSheet = ex.SpriteSheet.fromImageSource({
   image: Images.swordSheetImage,

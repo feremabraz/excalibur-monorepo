@@ -1,7 +1,7 @@
+import { loader } from '@/loader';
+import { MainScene } from '@scenes/Main';
+import { SplashScene } from '@scenes/Splash';
 import * as ex from 'excalibur';
-import { MainGameScene } from './src/MainGameScene';
-import { SplashScene } from './src/SplashScene';
-import { loader } from './src/loader';
 
 const game = new ex.Engine({
   width: 208 * 2,
@@ -10,12 +10,10 @@ const game = new ex.Engine({
   antialiasing: false,
   scenes: {
     splash: SplashScene,
-    main: MainGameScene,
+    main: MainScene,
   },
 });
 
 game.start(loader).then(() => {
   game.goToScene('splash');
 });
-
-// Removed monster button logic; handled in MainGameScene

@@ -1,5 +1,5 @@
 import { Explosion } from '@actors/Explosion';
-import { generateMonsterAnimations } from '@character-animations';
+import { generateMonsterAnimations } from '@animations/character';
 import { DrawShapeHelper } from '@classes/DrawShapeHelper';
 import {
   ANCHOR_CENTER,
